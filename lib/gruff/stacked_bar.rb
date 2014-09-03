@@ -47,7 +47,7 @@ class Gruff::StackedBar < Gruff::Base
           right_y = @graph_top + @graph_height - height[point_index] - @segment_spacing
 
           if @show_labels_for_bar_values
-            val = (@label_formatting || '%.2f') % @norm_data[row_index][3][point_index]
+            val = (@label_formatting || '%.2f') % @norm_data.map {|d| d[3][point_index]}.sum
             draw_value_label(left_x + (right_x - left_x)/2, left_y - 30, val.commify, true)
           end
 
