@@ -52,7 +52,7 @@ class Gruff::StackedBar < Gruff::Base
           end
 
           # update the total height of the current stacked bar
-          height[point_index] += (data_point * (@graph_height + 10) )
+          height[point_index] += (data_point * (@graph_height + 30) )
 
           @d = @d.rectangle(left_x, left_y, right_x, right_y)
         end
